@@ -3,7 +3,7 @@ The project was deployed with Netfly, and can be vizualized at [Pokedex](https:/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Imported dependencies
+## Imported dependencies
 bootstrap: 5.3.2\
 react-router-dom: 6.22.0\
 semantic-ui-css: 2.5.0\
