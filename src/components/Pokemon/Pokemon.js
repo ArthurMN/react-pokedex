@@ -6,12 +6,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
   searchPokemon,
-  searchPokemonSpecies,
 } from "../../Services/Api";
 
 function Pokemon() {
   const [pokemon, setPokemon] = useState([]);
-  const [pokemonSpecies, setPokemonSpecies] = useState([]);
   const [pokemonImage, setPokemonImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
@@ -59,34 +57,6 @@ function Pokemon() {
       });
 
       setPokemonImage(sprites.other.dream_world.front_default);
-
-      const speciesData = await searchPokemonSpecies(id);
-      const {
-        flavor_text_entries,
-        gender_rate,
-        capture_rate,
-        egg_groups,
-        hatch_counter,
-      } = speciesData;
-      setPokemonSpecies({
-        description: flavor_text_entries
-          .filter((flavor) => flavor.language.name === "en")
-          .map((flavor) => flavor.flavor_text),
-
-        genderRatioFemale: gender_rate * 12.5,
-        genderRatioMale: 12.5 * (8 - gender_rate),
-        catchRate: Math.round((100 / 255) * capture_rate),
-        eggGroups: egg_groups
-          .map((group) => {
-            return group.name
-              .toLowerCase()
-              .split(" ")
-              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-              .join(" ");
-          })
-          .join(", "),
-        hatchSteps: 255 * (hatch_counter + 1),
-      });
       setIsLoading(false);
     }
 

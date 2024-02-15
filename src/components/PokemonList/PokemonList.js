@@ -1,7 +1,6 @@
 //Importação de métodos
 import { useState, useEffect } from "react";
 import { getPokemons, getPokemonData } from "../../Services/Api";
-import { App } from "./styles";
 
 //Importação de componentes
 import Pagination from "../Pagination/Pagination";

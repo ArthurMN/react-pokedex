@@ -4,9 +4,7 @@ import PokemonList from "../../components/PokemonList/PokemonList";
 
 import styles from "./Pokedex.module.css";
 
-
 function Pokedex() {
-
   return (
     <div className={styles.pokedex_container}>
       <Navbar />
@@ -14,7 +12,6 @@ function Pokedex() {
         <PokemonList />
       </div>
     </div>
-    
   );
 }
 
