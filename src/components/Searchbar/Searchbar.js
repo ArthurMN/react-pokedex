@@ -3,10 +3,13 @@ import styles from "./Searchbar.module.css";
 
 function Searchbar({ onSearch }) {
   const [search, setSearch] = useState("");
+ 
+  
 
   function onChangeHandler(e) {
+    const q = (e.target.value).toLowerCase()
     setSearch(e.target.value);
-    onSearch(e.target.value);
+    onSearch(q);
   }
 
   return (
