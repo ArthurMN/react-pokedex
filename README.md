@@ -1,6 +1,6 @@
-# Projeto costs do canal hora de codar
+# Projeto Pokedex
 The project was deployed with Netfly, and can be vizualized at [Pokedex](https://leafy-parfait-cc1f1e.netlify.app)
-
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Imported dependencies
